@@ -16,7 +16,9 @@ ocr = PaddleOCR(use_angle_cls=True, lang='en')  # You can specify other language
 
 # Initialize YOLO model for text region detection
 model = YOLO("./best.pt")
-
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 # Updated regex pattern to match various date formats
 date_pattern = r"\b(\d{2}-[A-Za-z]{3}-\d{4}|\d{2}/\d{2}/\d{2}|\d{2}/[A-Za-z]{3}/\d{4}|\d{2}/\d{4}|\b[A-Za-z]{3}/\d{2}|\d{2}/\d{2}|\d{2}-\d{2}-\d{4})\b"
 
