@@ -144,9 +144,3 @@ async def upload_image(file: UploadFile = File(...)):
         return JSONResponse(content=result)
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
-
-# This part ensures that the app listens on the correct host and port in cloud environments like Render
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))  # Get the port from the environment variable
-    uvicorn.run(app, host="0.0.0.0", port=port)
