@@ -3,3 +3,7 @@ opencv-python
 paddleocr
 paddlepaddle
 numpy
+uvicorn
+ultralytics
+python-dotenv
+pillow
